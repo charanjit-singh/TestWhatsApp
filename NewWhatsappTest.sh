@@ -1,5 +1,5 @@
 #!/bin/bash
-script='/c/Users/Swati/Desktop/rajsionic/openshift/myflaskapp/run.py'
+script='/c/Users/XXXXX/Desktop/XXXXXXX/XXXXXXX/XXXXXX/run.py'
 #script=$OPENSHIFT_REPO_DIR/run.py
 while :
 do
