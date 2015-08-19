@@ -10,16 +10,6 @@ import requests
 from html2text import html2text as h
 #import unirest
 
-current_score = ['0', '']
-
-# Text Message to check
-message = 'YO'
-
-# World Cup series id for massap up
-WORLDCUP_ID = '2223'
-
-# Timer to update the score
-SCORE_TIMER = 5
 
 class EchoLayer(YowInterfaceLayer):
 
@@ -37,8 +27,8 @@ class EchoLayer(YowInterfaceLayer):
                 requesterName = inputMessage[1]
                 requesterNumber = messageProtocolEntity.getFrom().split('@')[0]
                 print (recipeId + " " + requesterName + " " + requesterNumber)
-                response = self.GetCurrentScore(recipeId,requesterName)
-                #response = self.image_send('919844041494',"http://cookingshooking.com/wp-content/uploads/2015/04/TCIcecream21-300x169.jpg")
+                response = self.GetCurrentRecipe(recipeId,requesterName)
+                #response = self.image_send('919844XXXXX4',"http://cookingshooking.com/wp-content/uploads/2015/04/TCIcecream21-300x169.jpg")
             else :
                 response = "Please send Message as RecipeId<space>YourName"
 
@@ -55,8 +45,8 @@ class EchoLayer(YowInterfaceLayer):
         ack = OutgoingAckProtocolEntity(entity.getId(), "receipt", entity.getType(), entity.getFrom())
         self.toLower(ack)
 
-    def GetCurrentScore(self,recipeId,requesterName):
-        text_response = 'Test Message \n Test Message \n Test Message \n Test Message'
+    def GetCurrentRecipe(self,recipeId,requesterName):
+        
 		#Return details
 ##        try:
         resp = requests.get('http://cookingshooking.com/wp-json/posts/' + str(recipeId))
