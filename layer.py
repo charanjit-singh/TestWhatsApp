@@ -149,7 +149,6 @@ class EchoLayer(YowInterfaceLayer):
 
 
     def send_image(self,recipeId,requesterName,requesterNumber,presentDateTime):
-        path = "./test.jpg"
         entity = RequestUploadIqProtocolEntity(RequestUploadIqProtocolEntity.MEDIA_TYPE_IMAGE, filePath=path)
         successFn = lambda successEntity, originalEntity: self.onRequestUploadResult(jid, path, successEntity, originalEntity)
         errorFn = lambda errorEntity, originalEntity: self.onRequestUploadError(jid, path, errorEntity, originalEntity)
